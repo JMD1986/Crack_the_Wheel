@@ -20,7 +20,7 @@
 
 ##cheese
 *name:
-*style: [_fresh, bloomy rind/soft ripened, washed rind, firm, semi soft, hard, blue]
+*style: _[fresh, bloomy rind/soft ripened, washed rind, firm, semi soft, hard, blue]_
 *type of milk: optional
 *where it was made: optional
 
