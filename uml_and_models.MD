@@ -32,12 +32,12 @@
  * email:
  * has secure password
 
- ##farm
-  * location
-  * name
-  * likes
-  * reviews
-  * bio: optional
+##farm
+ * location
+ * name
+ * likes
+ * reviews
+ * bio: optional
 
 ##Wheels(likes)
 *  whether they liked it or not
