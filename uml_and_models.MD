@@ -1,38 +1,37 @@
-#models:
+#uml:
 
-#Cheese
+##Cheese
 * has many reviews
 * has many likes
 
-# User
+##User
 * have many reviews
 * has many likes
 
-# Farm/producer
+##Farm/producer
 * have many cheese
 * have many likes
 
-# reviews
+##reviews
 
-# likes
+##likes
 
-###<-- tables -->
+#Models
 
-#cheese
+##cheese
 *name:
 *style:
-  **fresh
-  **bloomy rind/soft ripened
-  **washed rind
-  **firm
-  **semi soft
-  **hard
-  **blue
-
+  *fresh
+  *bloomy rind/soft ripened
+  *washed rind
+  *firm
+  *semi soft
+  *hard
+  *blue
 *type of milk: optional
 *where it was made: optional
 
-#user
+##user
  * first_name:
  * last_name:
  * username: optional
@@ -40,17 +39,17 @@
  * email:
  * has secure password
 
- #farm
+ ##farm
   * location
   * name
   * likes
   * reviews
   * bio: optional
 
-#Wheels(likes)
+##Wheels(likes)
 *  whether they liked it or not
 
-#reviews
+##reviews
  * cheese
  * text
  * a review equals a like automatically
