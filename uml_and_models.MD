@@ -4,17 +4,17 @@
 * has many reviews
 * has many likes
 
-User
+# User
 * have many reviews
 * has many likes
 
-Farm/producer
+# Farm/producer
 * have many cheese
 * have many likes
 
-reviews
+# reviews
 
-likes
+# likes
 
 ###<-- tables -->
 
