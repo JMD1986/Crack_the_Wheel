@@ -19,10 +19,10 @@
 #Models
 
 ##cheese
-*name:
-*style: _[fresh, bloomy rind/soft ripened, washed rind, firm, semi soft, hard, blue]_
-*type of milk: optional
-*where it was made: optional
+* name:
+* style: _[fresh, bloomy rind/soft ripened, washed rind, firm, semi soft, hard, blue]_
+* type of milk: optional
+* where it was made: optional
 
 ##user
  * first_name:
