@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+styles = ['fresh', 'bloomy rind/soft ripened', 'washed rind', 'firm', 'semi soft', 'hard', 'blue']

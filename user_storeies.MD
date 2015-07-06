@@ -1,4 +1,4 @@
-I want to be able to sign up and see reviews of of cheese made by members of the site
+I want to be able to sign up and see reviews of cheese made by members of the site
 
 I want to be able to write about a cheese I have tried
 

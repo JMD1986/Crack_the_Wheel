@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706180558) do
+ActiveRecord::Schema.define(version: 20150706211755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,10 @@ ActiveRecord::Schema.define(version: 20150706180558) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "milk"
+    t.integer  "farm_id"
   end
+
+  add_index "cheeses", ["farm_id"], name: "index_cheeses_on_farm_id", using: :btree
 
   create_table "farms", force: :cascade do |t|
     t.string   "name"
@@ -39,7 +42,12 @@ ActiveRecord::Schema.define(version: 20150706180558) do
     t.text     "commentary"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "cheese_id"
+    t.integer  "user_id"
   end
+
+  add_index "reviews", ["cheese_id"], name: "index_reviews_on_cheese_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -54,6 +62,8 @@ ActiveRecord::Schema.define(version: 20150706180558) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -65,4 +75,7 @@ ActiveRecord::Schema.define(version: 20150706180558) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "cheeses", "farms"
+  add_foreign_key "reviews", "cheeses"
+  add_foreign_key "reviews", "users"
 end

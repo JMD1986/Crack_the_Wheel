@@ -15,6 +15,9 @@ class CheesesController < ApplicationController
   # GET /cheeses/new
   def new
     @cheese = Cheese.new
+    @farm_options = Farm.all
+    @family_options = ['fresh', 'bloomy rind/soft ripened', 'washed rind', 'firm', 'semi soft', 'hard', 'blue']
+
   end
 
   # GET /cheeses/1/edit
