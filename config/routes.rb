@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :reviews
+  resources :wheels
   resources :farms
   devise_for :users
   resources :cheeses

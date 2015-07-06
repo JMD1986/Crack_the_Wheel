@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Wheels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Like</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wheels.each do |wheel| %>
+      <tr>
+        <td><%= wheel.like %></td>
+        <td><%= link_to 'Show', wheel %></td>
+        <td><%= link_to 'Edit', edit_wheel_path(wheel) %></td>
+        <td><%= link_to 'Destroy', wheel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wheel', new_wheel_path %>
