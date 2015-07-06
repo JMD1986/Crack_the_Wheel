@@ -9,6 +9,8 @@
       <th>Family</th>
       <th>Style</th>
       <th>Origin</th>
+      <th>Milk Source</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +22,7 @@
         <td><%= cheese.family %></td>
         <td><%= cheese.style %></td>
         <td><%= cheese.origin %></td>
+        <td><%= cheese.milk %></td>
         <td><%= link_to 'Show', cheese %></td>
         <td><%= link_to 'Edit', edit_cheese_path(cheese) %></td>
         <td><%= link_to 'Destroy', cheese, method: :delete, data: { confirm: 'Are you sure?' } %></td>
