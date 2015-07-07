@@ -5,6 +5,8 @@ class CheesesController < ApplicationController
   # GET /cheeses.json
   def index
     @cheeses = Cheese.all
+#    I need to figure out whats going on here
+    @farms = Farm.all
   end
 
   # GET /cheeses/1
@@ -15,8 +17,12 @@ class CheesesController < ApplicationController
   # GET /cheeses/new
   def new
     @cheese = Cheese.new
-    @farm_options = Farm.all
-    @family_options = ['fresh', 'bloomy rind/soft ripened', 'washed rind', 'firm', 'semi soft', 'hard', 'blue']
+    farm_options = Farm.all
+    @farm_names = []
+    farm_options.each do |farm|
+      @farm_names.push(farm.name)
+    end
+    @family_options = ['Fresh', 'Soft Ripened', 'Washed Rind', 'Firm', 'Semi Soft', 'Hard', 'Blue']
 
   end
 
