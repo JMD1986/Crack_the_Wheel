@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706211755) do
+ActiveRecord::Schema.define(version: 20150707221435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,9 +73,14 @@ ActiveRecord::Schema.define(version: 20150706211755) do
     t.boolean  "like"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "rating"
+    t.integer  "user_id"
   end
+
+  add_index "wheels", ["user_id"], name: "index_wheels_on_user_id", using: :btree
 
   add_foreign_key "cheeses", "farms"
   add_foreign_key "reviews", "cheeses"
   add_foreign_key "reviews", "users"
+  add_foreign_key "wheels", "users"
 end

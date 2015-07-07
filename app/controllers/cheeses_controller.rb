@@ -17,13 +17,17 @@ class CheesesController < ApplicationController
   # GET /cheeses/new
   def new
     @cheese = Cheese.new
+
     farm_options = Farm.all
     @farm_names = []
     farm_options.each do |farm|
       @farm_names.push(farm.name)
     end
+
     @family_options = ['Fresh', 'Soft Ripened', 'Washed Rind', 'Firm', 'Semi Soft', 'Hard', 'Blue']
 
+    @review = Review.new
+    @wheel = Wheel.new
   end
 
   # GET /cheeses/1/edit
