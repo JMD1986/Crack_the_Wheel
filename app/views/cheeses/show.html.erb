@@ -1,9 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @cheese.name %>
-</p>
+<h1>  <%= @cheese.name %> </h1>
+<%= image_tag @cheese.image.url(:medium) %>
 
 <p>
   <strong>Family:</strong>
@@ -18,6 +14,14 @@
 <p>
   <strong>Origin:</strong>
   <%= @cheese.origin %>
+</p>
+<p>
+  <strong>Wheels:</strong>
+   Number of "likes"
+</p>
+<p>
+  <strong>Reviews:</strong>
+  a bunch of reviews
 </p>
 
 <%= link_to 'Edit', edit_cheese_path(@cheese) %> |

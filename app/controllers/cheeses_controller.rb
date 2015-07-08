@@ -16,6 +16,7 @@ class CheesesController < ApplicationController
 
   # GET /cheeses/new
   def new
+    authenticate_user!
     @cheese = Cheese.new
 
     farm_options = Farm.all
@@ -23,6 +24,7 @@ class CheesesController < ApplicationController
     farm_options.each do |farm|
       @farm_names.push(farm.name)
     end
+
 
     @family_options = ['Fresh', 'Soft Ripened', 'Washed Rind', 'Firm', 'Semi Soft', 'Hard', 'Blue']
 
@@ -64,15 +66,7 @@ class CheesesController < ApplicationController
     end
   end
 
-  # DELETE /cheeses/1
-  # DELETE /cheeses/1.json
-  def destroy
-    @cheese.destroy
-    respond_to do |format|
-      format.html { redirect_to cheeses_url, notice: 'Cheese was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -82,6 +76,6 @@ class CheesesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cheese_params
-      params.require(:cheese).permit(:name, :family, :style, :origin)
+      params.require(:cheese).permit(:name, :image, :family, :style, :origin)
     end
 end

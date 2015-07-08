@@ -14,6 +14,7 @@ class WheelsController < ApplicationController
 
   # GET /wheels/new
   def new
+    authenticate_user
     @wheel = Wheel.new
   end
 
