@@ -11,12 +11,14 @@ class ReviewsController < ApplicationController
   # GET /reviews/1
   # GET /reviews/1.json
   def show
+    @reviews = Review.find(params[:id])
   end
 
   # GET /reviews/new
   def new
     authenticate_user!
     @review = Review.new
+    @review.cheese_id = Cheese.find(params[:id])
     @wheel = Wheel.new
     @wheel_scale = [1,2,3,4,5]
   end
@@ -30,10 +32,10 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
-
+    @review.cheese_id = Cheese.find(params[:id])
     respond_to do |format|
       if @review.save
-        format.html { redirect_to @review, notice: 'Review was successfully created.' }
+        format.html { redirect_to cheese_path, notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new }

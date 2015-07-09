@@ -13,7 +13,7 @@ class CheesesController < ApplicationController
   # GET /cheeses/1.json
   def show
     authenticate_user!
-    # @reviews = Review.find(params[:id])
+    @reviews = Review.find(params[:id])
     @review = Review.create
     @wheel = Wheel.new
     @wheel_scale = [1,2,3,4,5]
