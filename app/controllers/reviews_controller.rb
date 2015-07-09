@@ -18,7 +18,6 @@ class ReviewsController < ApplicationController
   def new
     authenticate_user!
     @review = Review.new
-    @review.cheese_id = Cheese.find(params[:id])
     @wheel = Wheel.new
     @wheel_scale = [1,2,3,4,5]
   end
@@ -30,9 +29,10 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
+    #need to figure out why this doesn't work
     @review = Review.new(review_params)
     @review.user_id = current_user.id
-    @review.cheese_id = Cheese.find(params[:id])
+    # @review.cheese_id = Cheese.find(params[:id])
     respond_to do |format|
       if @review.save
         format.html { redirect_to cheese_path, notice: 'Review was successfully created.' }
@@ -76,6 +76,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:name_of_cheese, :commentary, :image, :wheel)
+      params.require(:review).permit(:name_of_cheese, :user_id, :cheese_id, :commentary, :image, :wheel)
     end
 end

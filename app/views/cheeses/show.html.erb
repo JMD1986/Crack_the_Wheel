@@ -27,17 +27,10 @@
 <h2>Review This cheese</h2>
 <%= render '/reviews/form' %>
 </div>
-<p>
-  <strong>Name of cheese:</strong>
-  <%= @reviews.name_of_cheese %>
-</p>
 
-
-<p>
-  <strong>Commentary:</strong>
-  <%= @reviews.commentary %>
-</p>
-<p>
-  <strong>Rating:</strong>
-  <%= @reviews.wheel %>
-</p>
+<div class="container">
+  <% @reviews.each do |review| %>
+  <%= review.wheel %>
+  <%= review.commentary %>
+  <% end %>
+</div>

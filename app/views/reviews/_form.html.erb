@@ -17,6 +17,12 @@
     <%= f.text_field :name_of_cheese, value: "#{@cheese.name}" %>
   </div>
   <div class="field">
+    <%= f.hidden_field :cheese_id, value: @cheese.id %>
+  </div>
+   <div class="field">
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  </div>
+  <div class="field">
     <%= f.label :image %><br>
     <%= f.file_field :image, as: :file %>
   </div>
