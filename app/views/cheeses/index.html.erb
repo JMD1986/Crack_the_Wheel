@@ -24,4 +24,17 @@
 
 <br>
 
-<%= link_to 'New Cheese', new_cheese_path %>
+<div class="container">
+  <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-3"><% @cheeses.each do |cheese| %>
+        <%= image_tag cheese.image.url(:medium) %>
+        <%= link_to cheese.name, cheese %>
+        <%= cheese.family %>
+        <%= cheese.farm_id %>
+        <% end %>
+      </div>
+      <div class="col-md-2"></div>
+
+  </div>
+</div>
