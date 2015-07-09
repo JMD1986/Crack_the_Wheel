@@ -1,15 +1,13 @@
 
 <div class="container">
-  <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-3"><% @cheeses.each do |cheese| %>
-        <%= image_tag cheese.image.url(:medium) %>
-        <%= link_to cheese.name, cheese %>
-        <%= cheese.family %>
-        <%= cheese.farm_id %>
-        <% end %>
-      </div>
-      <div class="col-md-2"></div>
-
-  </div>
+  <div class="col-md-1", "side-bar"></div>
+    <div class="row">
+      <% @cheeses.each do |cheese| %>
+        <div class="col-md-3">
+          <%= image_tag cheese.image.url(:medium) %>
+          <%= link_to cheese.name, cheese %>
+        </div>
+      <% end %>
+    </div>
+  <div class="col-md-2", "side-bar"></div>
 </div>

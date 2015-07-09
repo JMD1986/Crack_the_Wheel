@@ -1,28 +1,29 @@
-<h1>  <%= @cheese.name %> </h1>
-<%= image_tag @cheese.image.url(:medium) %>
+<div class="container">
+  <div class ="row", "cheese-show-page-top">
+    <h1>  <%= @cheese.name %> </h1>
+    <%= image_tag @cheese.image.url(:medium) %>
+  </div>
 
-<p>
-  <strong>Family:</strong>
-  <%= @cheese.family %>
-</p>
-
-<p>
-  <strong>Style:</strong>
-  <%= @cheese.style %>
-</p>
-
-<p>
-  <strong>Origin:</strong>
-  <%= @cheese.origin %>
-</p>
-<p>
-  <strong>Wheels:</strong>
-   Number of "likes"
-</p>
-<p>
-  <strong>Reviews:</strong>
-  a bunch of reviews
-</p>
-
-<%= link_to 'Edit', edit_cheese_path(@cheese) %> |
-<%= link_to 'Back', cheeses_path %>
+  <p>
+    <strong>Family:</strong>
+    <%= @cheese.family %>
+  </p>
+   <p>
+    <strong>Age:</strong>
+    <%= @cheese.age %>
+  </p>
+   <p>
+    <strong>Milk:</strong>
+    <%= @cheese.milk %>
+  </p>
+  <p>
+    <strong>Origin:</strong>
+    <%= @cheese.origin %>
+  </p>
+  <p>
+    <strong>Wheels:</strong>
+     Number of "likes"
+  </p>
+<h2>Review This cheese</h2>
+<%= render '/reviews/form' %>
+</div>

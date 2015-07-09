@@ -1,17 +1,12 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-$border-gray: #acacac;
-$light-border-gray: #ececec;
-$background-gray: #f7f5f3;
+$primary: #DE9D4A;
 
-$red: #d39aa5;
-$orange: #d3ac9a;
-$yellow: #d3c89a;
-$teal: #9ad3c8;
-
-$primary: #CFA66F;
-$complementary: $yellow;
+* {
+margin: 0;
+padding: 0;
+}
 
 .notices {
   margin-top: 20px;
@@ -27,7 +22,7 @@ header.main, footer {
 }
 
 header.main {
-    border-bottom: 5px solid darken($primary, 5%);
+    border-bottom: 5px solid #FFD34E;
     background: $primary;
     color: white;
     height: 80px;
@@ -40,51 +35,6 @@ header.main {
     }
 }
 
-.content {
-  padding-bottom: 60px;
-}
-
-nav ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-nav ul li {
-  display: inline;
-}
-
-ul.list {
-    padding-left:0;
-
-    li, li {
-        background: #fafafa;
-        padding: 10px;
-        margin: 10px 0;
-        border: 1px $light-border-gray solid;
-        list-style: none;
-        border-radius: 4px;
-        overflow: hidden;
-
-        &:hover {
-          box-shadow: 0px 0px 1px rgba(0,0,0,0.5);
-        }
-    }
-
-}
-
-/* Ahhh bootstrap overrides */
-.btn-primary {
-  background: $primary;
-  border-color: darken($primary, 5%);
-  &:hover {
-    background: darken($primary, 15%);
-    border-color: darken($primary, 20%);
-  }
-}
-
-nav li a.danger {
-  &:hover {
-    color: white;
-    background: #D84669;
-  }
+body {
+  background-color: #FFFAD9;
 }

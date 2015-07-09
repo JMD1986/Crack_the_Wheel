@@ -14,7 +14,7 @@ class FarmsController < ApplicationController
 
   # GET /farms/new
   def new
-    authenticate_user
+    authenticate_user!
     @farm = Farm.new
   end
 
