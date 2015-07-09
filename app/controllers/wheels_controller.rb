@@ -26,6 +26,7 @@ class WheelsController < ApplicationController
   # POST /wheels.json
   def create
     @wheel = Wheel.new(wheel_params)
+    @wheel.user_id = current_user.id
 
     respond_to do |format|
       if @wheel.save
