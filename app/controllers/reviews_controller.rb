@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /reviews
   # GET /reviews.json
@@ -14,8 +15,10 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    authenticate_user
+    authenticate_user!
     @review = Review.new
+    @wheel = Wheel.new
+    @wheel_scale = [1,2,3,4,5]
   end
 
   # GET /reviews/1/edit
@@ -71,6 +74,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:name_of_cheese, :commentary)
+      params.require(:review).permit(:name_of_cheese, :commentary, :image, :wheel)
     end
 end

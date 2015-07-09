@@ -1,5 +1,6 @@
 class WheelsController < ApplicationController
   before_action :set_wheel, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /wheels
   # GET /wheels.json

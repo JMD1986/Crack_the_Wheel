@@ -1,5 +1,5 @@
 
-<%= form_for(@review) do |f| %>
+<%= form_for(@review, html: { multipart: true }) do |f| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -16,13 +16,15 @@
     <%= f.label :name_of_cheese %><br>
     <%= f.text_field :name_of_cheese %>
   </div>
-<!--  place the wheels voting thing here
- -->
   <div class="field">
-    <%= f.label :name_of_cheese %><br>
-    <%= f.text_field :name_of_cheese %>
+    <%= f.label :image %><br>
+    <%= f.file_field :image, as: :file %>
   </div>
- <div class="field">
+  <div class="field">
+    <%= f.label :wheel %>
+    <%= f.select :wheel, @wheel_scale %>
+  </div>
+  <div class="field">
     <%= f.label :commentary %><br>
     <%= f.text_area :commentary %>
   </div>

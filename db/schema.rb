@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708220505) do
+ActiveRecord::Schema.define(version: 20150709031545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20150708220505) do
   create_table "cheeses", force: :cascade do |t|
     t.string   "name"
     t.string   "family",             null: false
-    t.string   "style",              null: false
     t.string   "origin"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -29,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150708220505) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "age"
   end
 
   add_index "cheeses", ["farm_id"], name: "index_cheeses_on_farm_id", using: :btree
@@ -44,10 +44,16 @@ ActiveRecord::Schema.define(version: 20150708220505) do
   create_table "reviews", force: :cascade do |t|
     t.string   "name_of_cheese"
     t.text     "commentary"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "cheese_id"
     t.integer  "user_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "wheels"
+    t.integer  "wheel"
   end
 
   add_index "reviews", ["cheese_id"], name: "index_reviews_on_cheese_id", using: :btree

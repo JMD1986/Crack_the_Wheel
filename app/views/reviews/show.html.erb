@@ -9,6 +9,10 @@
   <strong>Commentary:</strong>
   <%= @review.commentary %>
 </p>
+<p>
+  <strong>Rating:</strong>
+  <%= @review.wheel %>
+</p>
 
 <%= link_to 'Edit', edit_review_path(@review) %> |
 <%= link_to 'Back', reviews_path %>

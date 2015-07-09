@@ -27,9 +27,6 @@ class CheesesController < ApplicationController
 
 
     @family_options = ['Fresh', 'Soft Ripened', 'Washed Rind', 'Firm', 'Semi Soft', 'Hard', 'Blue']
-
-    @review = Review.new
-    @wheel = Wheel.new
   end
 
   # GET /cheeses/1/edit
@@ -76,6 +73,6 @@ class CheesesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cheese_params
-      params.require(:cheese).permit(:name, :image, :family, :style, :origin)
+      params.require(:cheese).permit(:name, :image, :family, :style, :origin, :age, :milk, :farm_id)
     end
 end
