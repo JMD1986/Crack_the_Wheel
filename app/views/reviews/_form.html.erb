@@ -11,11 +11,6 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name_of_cheese %><br>
-    <%= f.text_field :name_of_cheese, value: "#{@cheese.name}" %>
-  </div>
   <div class="field">
     <%= f.hidden_field :cheese_id, value: @cheese.id %>
   </div>

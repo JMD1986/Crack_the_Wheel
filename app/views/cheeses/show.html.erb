@@ -22,7 +22,8 @@
   </p>
   <p>
     <strong>Wheels:</strong>
-     Number of "likes"
+
+
   </p>
 <h2>Review This cheese</h2>
 <%= render '/reviews/form' %>
@@ -30,6 +31,7 @@
 
 <div class="container">
   <% @reviews.each do |review| %>
+  <%#= review.user.name %>
   <%= review.wheel %>
   <%= review.commentary %>
   <% end %>
