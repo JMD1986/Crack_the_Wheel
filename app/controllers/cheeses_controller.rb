@@ -15,7 +15,7 @@ class CheesesController < ApplicationController
     authenticate_user!
     @reviews = Review.where(cheese_id: params[:id])
     @review = Review.create
-    @wheel_scale = [1,2,3,4,5]
+    @wheel_scale = [1, 2, 3, 4, 5]
 
   end
 
@@ -26,10 +26,17 @@ class CheesesController < ApplicationController
 
     farm_options = Farm.all
     @farm_names = []
-    farm_options.each do |farm|
-      @farm_names.push(farm.name)
+    farm_options.map do |farm|
+      @farm_names.push(farm.name, farm.id)
     end
 
+    reviews = Review.where(cheese_id :params[:id])
+    @wheels_array = []
+    review.each do |review|
+      @wheels_array.push(review.wheel)
+    end
+    @wheels_array.count = number_of_ratings
+    @average_rating = wheels_array.inject(:+) / number_of_ratings
 
     @family_options = ['Fresh', 'Soft Ripened', 'Washed Rind', 'Firm', 'Semi Soft', 'Hard', 'Blue']
   end

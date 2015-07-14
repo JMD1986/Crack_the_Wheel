@@ -1,7 +1,7 @@
 <div class="container">
   <div class ="row", "cheese-show-page-top">
     <h1>  <%= @cheese.name %> </h1>
-    <%= image_tag @cheese.image.url(:medium) %>
+      <%= image_tag @cheese.image.url(:large) %>
   </div>
 
   <p>
@@ -21,18 +21,20 @@
     <%= @cheese.origin %>
   </p>
   <p>
-    <strong>Wheels:</strong>
-
-
+    <strong>Wheels: </strong>
+  <%= @average_rating %>
   </p>
 <h2>Review This cheese</h2>
-<%= render '/reviews/form' %>
+  <%= render '/reviews/form' %>
 </div>
 
 <div class="container">
   <% @reviews.each do |review| %>
-  <%#= review.user.name %>
-  <%= review.wheel %>
-  <%= review.commentary %>
+    <p><%= image_tag review.image.url(:thumb) %></p>
+    <% (review.wheel).times do %>
+    <%=image_tag("Cheese_with_little_cutted_triangular_piece_24.png") %>
+    <% end %>
+
+    <p><%= review.commentary %></p>
   <% end %>
 </div>
