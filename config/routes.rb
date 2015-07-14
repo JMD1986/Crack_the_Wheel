@@ -1,15 +1,10 @@
 Rails.application.routes.draw do
   resources :wheels
-  # resources :farms do
-  #   resources :cheeses do
-  #     resources :reviews do
-  #     end
-  #   end
-  # end
   resources :farms
   resources :cheeses
   resources :reviews
   devise_for :users
+
 
   root to: "cheeses#index"
   # The priority is based upon order of creation: first created -> highest priority.

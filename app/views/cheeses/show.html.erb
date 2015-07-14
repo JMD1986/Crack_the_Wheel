@@ -31,9 +31,10 @@
 <div class="container">
   <% @reviews.each do |review| %>
     <p><%= image_tag review.image.url(:thumb) %></p>
-    <% (review.wheel).times do %>
-    <%=image_tag("Cheese_with_little_cutted_triangular_piece_24.png") %>
-    <% end %>
+    <%= review.user.first_name %>
+      <% (review.wheel).times do %>
+        <%=image_tag("Cheese_with_little_cutted_triangular_piece_24.png") %>
+      <% end %>
 
     <p><%= review.commentary %></p>
   <% end %>
