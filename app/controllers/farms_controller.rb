@@ -10,6 +10,7 @@ class FarmsController < ApplicationController
   # GET /farms/1
   # GET /farms/1.json
   def show
+    @cheese = Cheese.where(cheese_id: params[:id])
   end
 
   # GET /farms/new

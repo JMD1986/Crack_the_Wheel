@@ -2,17 +2,16 @@ class Cheese < ActiveRecord::Base
   has_many :reviews
   has_many :wheels
   belongs_to :farm
-  has_attached_file :image, styles: { large: "600x600>", medium: "300x300", thumb: "150x150#"}
+  has_attached_file :image, styles: { large: "600x600>", medium: "300x300", thumb: "100x100#"}
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  def average_rating
-    reviews = Review.where(cheese_id :params[:id])
+  def self.average_rating(review, wheels_array)
     wheels_array = []
     wheels_array.count = number_of_ratings
     review.each do |review|
       wheels_array.push(review.wheel)
     end
-    @average_rating = wheels_array.inject(:+) / number_of_ratings
+    @average = wheels_array.inject(:+) / number_of_ratings
   end
 
   def farm_list

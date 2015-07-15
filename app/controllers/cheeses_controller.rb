@@ -16,7 +16,6 @@ class CheesesController < ApplicationController
     @reviews = Review.where(cheese_id: params[:id])
     @review = Review.new
     @wheel_scale = [1, 2, 3, 4, 5]
-
   end
 
   # GET /cheeses/new
@@ -29,13 +28,12 @@ class CheesesController < ApplicationController
     @farm_names << [farm.name, farm.id]
     end
 
-    # reviews = Review.where(cheese_id: params[:id])
-    # @wheels_array = []
-    # reviews.each do |review|
-    #   @wheels_array.push(review.wheel)
-    # end
-    # @wheels_array.count = number_of_ratings
-    # @average_rating = wheels_array.inject(:+) / number_of_ratings
+    reviews = Review.where(cheese_id :params[:id])
+    review_array = []
+    review.each do |review|
+      review_array.push(review.wheel)
+    end
+    @average = review_array.reduce(:+) / review_array.count
 
     @family_options = ['Fresh', 'Soft Ripened', 'Washed Rind', 'Firm', 'Semi Soft', 'Hard', 'Blue']
   end

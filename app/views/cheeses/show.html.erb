@@ -1,12 +1,13 @@
 <div class="container">
   <div class ="row", "cheese-show-page-top">
+    <h2><%= link_to @cheese.farm.name, @cheese.farm %>'s </h2>
     <h1>  <%= @cheese.name %> </h1>
       <%= image_tag @cheese.image.url(:large) %>
   </div>
 
   <p>
     <strong>Family:</strong>
-    <%= @cheese.family %>
+    <%= @cheese.family  %>
   </p>
    <p>
     <strong>Age:</strong>
@@ -21,8 +22,8 @@
     <%= @cheese.origin %>
   </p>
   <p>
-    <strong>Wheels: </strong>
-  <%= @average_rating %>
+    <strong>Wheels:</strong>
+    <%= @average %>
   </p>
 <h2>Review This cheese</h2>
   <%= render '/reviews/form' %>
