@@ -22,8 +22,11 @@
     <%= @cheese.origin %>
   </p>
   <p>
-    <strong>Wheels:</strong>
-    <%= @average %>
+    <strong>Average Rating</strong>
+    <% @cheese.average_rating.times do %>
+    <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
+    <% end %>
+
   </p>
 <h2>Review This cheese</h2>
   <%= render '/reviews/form' %>
@@ -34,9 +37,10 @@
     <p><%= image_tag review.image.url(:thumb) %></p>
     <%= review.user.first_name %>
       <% (review.wheel).times do %>
-        <%=image_tag("Cheese_with_little_cutted_triangular_piece_24.png") %>
+        <%#=image_tag("Cheese_with_little_cutted_triangular_piece_24.png") %>
+        <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
       <% end %>
 
-    <p><%= review.commentary %></p>
+    <p><%= link_to review.commentary, review %></p>
   <% end %>
 </div>

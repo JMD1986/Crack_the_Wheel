@@ -5,13 +5,8 @@ class Cheese < ActiveRecord::Base
   has_attached_file :image, styles: { large: "600x600>", medium: "300x300", thumb: "100x100#"}
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  def self.average_rating(review, wheels_array)
-    wheels_array = []
-    wheels_array.count = number_of_ratings
-    review.each do |review|
-      wheels_array.push(review.wheel)
-    end
-    @average = wheels_array.inject(:+) / number_of_ratings
+  def average_rating
+    reviews.pluck(:wheel).sum / reviews.count
   end
 
   def farm_list

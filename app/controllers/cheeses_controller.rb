@@ -28,22 +28,12 @@ class CheesesController < ApplicationController
     @farm_names << [farm.name, farm.id]
     end
 
-    reviews = Review.where(cheese_id :params[:id])
-    review_array = []
-    review.each do |review|
-      review_array.push(review.wheel)
-    end
-    @average = review_array.reduce(:+) / review_array.count
-
     @family_options = ['Fresh', 'Soft Ripened', 'Washed Rind', 'Firm', 'Semi Soft', 'Hard', 'Blue']
   end
 
-  # GET /cheeses/1/edit
   def edit
   end
 
-  # POST /cheeses
-  # POST /cheeses.json
   def create
     @cheese = Cheese.new(cheese_params)
 
@@ -58,8 +48,7 @@ class CheesesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /cheeses/1
-  # PATCH/PUT /cheeses/1.json
+
   def update
     respond_to do |format|
       if @cheese.update(cheese_params)

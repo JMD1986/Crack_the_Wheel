@@ -1,18 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name of cheese:</strong>
-  <%= @reviews.name_of_cheese %>
-</p>
-
-
+<%= image_tag @review.image.url(:large) %>
 <p>
   <strong>Commentary:</strong>
   <%= @reviews.commentary %>
 </p>
 <p>
   <strong>Rating:</strong>
-  <%= @reviews.wheel %>
+  <% (@reviews.wheel).times do %>
+    <%=image_tag("Cheese_with_little_cutted_triangular_piece_24.png") %>
+        <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
+
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_review_path(@review) %> |

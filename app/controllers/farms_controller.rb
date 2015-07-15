@@ -1,15 +1,13 @@
 class FarmsController < ApplicationController
   before_action :set_farm, only: [:show, :edit, :update, :destroy]
 
-  # GET /farms
-  # GET /farms.json
   def index
     @farms = Farm.all
   end
 
-  # GET /farms/1
-  # GET /farms/1.json
+
   def show
+    #talk to someone about what happens if this doesnt exist when the farm is created!
     @cheese = Cheese.where(cheese_id: params[:id])
   end
 
