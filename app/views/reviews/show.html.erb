@@ -6,11 +6,6 @@
 <p>
   <strong>Rating:</strong>
   <% (@reviews.wheel).times do %>
-    <%=image_tag("Cheese_with_little_cutted_triangular_piece_24.png") %>
-        <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
-
+    <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
   <% end %>
 </p>
-
-<%= link_to 'Edit', edit_review_path(@review) %> |
-<%= link_to 'Back', reviews_path %>

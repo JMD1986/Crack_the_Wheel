@@ -3,14 +3,16 @@
   <div class="col-md-1", "side-bar"></div>
     <div class="row">
       <% @cheeses.each do |cheese| %>
-        <div class="col-md-3">
+        <div class="col-md-3 cheese_index_blocks">
           <div class="row">
-            <%= image_tag cheese.image.url(:medium) %>
-            <% cheese.average_rating.times do %>
-            <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
-            <% end %>
-            <%= link_to cheese.farm.name, cheese.farm %>
-            <%= link_to cheese.name, cheese %>
+            <div class="col-md-11">
+             <p> <%= image_tag cheese.image.url(:medium) %>
+              <% cheese.average_rating.times do %>
+              <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
+              <% end %> </p>
+              <p><%= link_to cheese.farm.name, cheese.farm %></p>
+              <p><%= link_to cheese.name, cheese %></p>
+            </div>
           </div>
         </div>
       <% end %>

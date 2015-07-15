@@ -35,6 +35,20 @@ header.main {
     }
 }
 
+footer {
+    border-top: 5px solid #FFD34E;
+    background: $primary;
+    color: white;
+    height: 80px;
+    padding-top: 20px;
+    a {
+      color: white;
+    }
+    h1 {
+      display:inline;
+    }
+}
+
 body {
   background-color: #FFFAD9;
 }
@@ -42,4 +56,14 @@ body {
 .ratings_slice {
   width: 7%;
   height: auto;
+}
+
+.cheese_index_blocks {
+  background-color: #005B62;
+}
+
+.main_logo {
+  width: 75%;
+  height: auto;
+
 }
