@@ -214,7 +214,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aws-sdk (~> 2.1.2)
+  aws-sdk
   bcrypt
   bootstrap-sass
   bullet
