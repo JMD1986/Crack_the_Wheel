@@ -14,14 +14,14 @@ gem 'paperclip', '~> 4.3.0'
 gem 'devise', '~> 3.5.1'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'puma'
+gem 'figaro'
 
 
 group :development, :test do
 
 
 
-gem 'puma'
-gem 'figaro'
 end
 group :production do
   gem 'rails_12factor'
