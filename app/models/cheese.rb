@@ -6,7 +6,11 @@ class Cheese < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   def average_rating
-    reviews.pluck(:wheel).sum / reviews.count
+    if reviews.count > 0
+      reviews.pluck(:wheel).sum / reviews.count
+    else
+      0
+    end
   end
 
   def farm_list

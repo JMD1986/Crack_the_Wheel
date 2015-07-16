@@ -10,9 +10,7 @@ margin: 0;
 padding: 0;
 }
 
-.notices {
-  margin-top: 20px;
-}
+
 
 .help-block {
   font-size:0.9em;
@@ -28,7 +26,7 @@ header {
     background: $primary;
     color: white;
     height: 80px;
-    padding-top: 20px;
+    // padding-top: 20px;
     a {
       color: white;
     }
