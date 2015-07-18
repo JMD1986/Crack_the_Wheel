@@ -6,23 +6,42 @@
   width: 100%;
   height: 100%;
   display: block;
-}
 
-.new_cheese_page::after {
-  content: "";
-  background: url(px_bc15_gorts_gouda_varieties.jpg);
-  opacity: 0.75;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
+
+  .new_cheese_page::after {
+    content: "";
+    background: url(px_bc15_gorts_gouda_varieties.jpg);
+    opacity: 0.75;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
 
 .cheese_index_blocks {
   background-color: #005B62;
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-right: 1em
+  margin-top: 2em;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-bottom: 2em;
+  .image_container {
+    max-height: 300px;
+    max-width: 300px;
+    position: absolute;
+
+    .image_collection {
+      max-height: 100%;
+      max-width: 100%;
+      }
+    }
+  }
+}
+
+.cheese_row {
+  background-color: #005B62;
+  height: 40em;
+  width: 80em;
 }

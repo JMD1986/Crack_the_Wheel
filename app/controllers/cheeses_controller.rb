@@ -1,16 +1,11 @@
 class CheesesController < ApplicationController
   before_action :set_cheese, only: [:show, :edit, :update, :destroy]
 
-  # GET /cheeses
-  # GET /cheeses.json
   def index
     @cheeses = Cheese.all
-#    I need to figure out whats going on here
     @farms = Farm.all
   end
 
-  # GET /cheeses/1
-  # GET /cheeses/1.json
   def show
     authenticate_user!
     @reviews = Review.where(cheese_id: params[:id])
@@ -18,7 +13,6 @@ class CheesesController < ApplicationController
     @wheel_scale = [1, 2, 3, 4, 5]
   end
 
-  # GET /cheeses/new
   def new
     authenticate_user!
     @cheese = Cheese.new

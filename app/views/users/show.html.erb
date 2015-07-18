@@ -1,40 +1,13 @@
 <div class="container">
   <div class ="row", "cheese-show-page-top">
+    <h2><%= link_to @cheese.farm.name, @cheese.farm %>'s </h2>
     <h1>  <%= @cheese.name %> </h1>
       <%= image_tag @cheese.image.url(:large) %>
   </div>
 
   <p>
-    <%= image_tag("farm.svg") %>
-  <%= link_to @cheese.farm.name, @cheese.farm %>
-</p>
-  <P>
-    <strong>Family:</strong>
-    <% if @cheese.family = "Blue" %>
-      <%= image_tag("blue.svg") %>
-      <%= "Blue" %>
-   <% elsif @cheese.family = "Fresh" %>
-      <%= image_tag("fresh.svg") %>
-      <%= "Fresh" %>
-    <% elsif @cheese.family = "Washed Rind" %>
-      <%= image_tag("washed-rind.svg") %>
-      <%= "Washed Rind" %>
-    <% elsif @cheese.family = "Firm" %>
-      <%= image_tag("firm.svg") %>
-      <%= "Firm" %>
-    <% elsif @cheese.family = "Semi Soft" %>
-      <%= image_tag("semi-soft.svg") %>
-      <%= "Semi Soft" %>
-    <% elsif @cheese.family = "Hard" %>
-      <%= image_tag("hard.svg") %>
-      <%= "Fresh" %>
-    <% elsif @cheese.family = "Soft Ripened" %>
-      <%= image_tag("soft-ripend.svg") %>
-      <%= "Soft Ripened" %>
-    <% else %>
-      <%= image_tag("cheese-wheel.svg") %>
-      <%= "Well this seems to be a new cheese!" %>
-    <% end %>
+    <strong>Name:</strong>
+    <%= @cheese.family  %>
   </p>
    <p>
     <strong>Age:</strong>

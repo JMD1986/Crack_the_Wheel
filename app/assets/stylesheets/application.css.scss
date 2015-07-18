@@ -10,7 +10,17 @@ margin: 0;
 padding: 0;
 }
 
+.alert {
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+}
 
+.notice {
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+}
 
 .help-block {
   font-size:0.9em;
@@ -26,7 +36,7 @@ header {
     background: $primary;
     color: white;
     height: 80px;
-    // padding-top: 20px;
+    padding-top: 20px;
     a {
       color: white;
     }

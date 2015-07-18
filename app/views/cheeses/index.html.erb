@@ -1,18 +1,15 @@
-
 <div class="container">
-  <div class="row">
+  <div class="cheese_row">
     <% @cheeses.each do |cheese| %>
-      <div class="col-md-3 cheese_index_blocks">
-        <div class="row">
-          <div class="col-md-11">
-            <p> <%= image_tag cheese.image.url(:medium) %>
-            <% cheese.average_rating.times do %>
-            <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
-            <% end %> </p>
-            <p><%= link_to cheese.farm.name, cheese.farm %></p>
-            <p><%= link_to cheese.name, cheese %></p>
-          </div>
+      <div class="col-md-4 cheese_index_blocks">
+        <div class="image_container">
+          <%= image_tag cheese.image.url(:medium), class: "image_collection" %>
         </div>
+          <% cheese.average_rating.times do %>
+          <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
+          <% end %>
+        <p><%= link_to cheese.farm.name, cheese.farm %></p>
+        <p><%= link_to cheese.name, cheese %></p>
       </div>
     <% end %>
   </div>

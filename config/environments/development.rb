@@ -3,7 +3,7 @@ Rails.application.configure do
     :storage => 's3',
     :s3_credentials => {
       :bucket => ENV['AWS_BUCKET'],
-      :access_key_id => ENV['Access_Key_ID']
+      :access_key_id => ENV['Access_Key_ID'],
       :secret_access_key => ENV['Secret_Access_Key']
     }
   }
