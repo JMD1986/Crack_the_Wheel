@@ -1,38 +1,37 @@
 <div class="container">
-  <div class ="row", "cheese-show-page-top">
-    <h1>  <%= @cheese.name %> </h1>
-      <%= image_tag @cheese.image.url(:large) %>
+  <div style="background-image: url(<%= image_tag @cheese.image.url(:large)%>); background-repeat: no-repeat; background-size: cover; background-position: center center; height: 350px; z-index: -1; position: absolute; top: 0; width: 100%;">
+    <h2 class="Cheese_name"><%= @cheese.name %> </h2>
   </div>
 
-  <p>
-    <%= image_tag("farm.svg") %>
-  <%= link_to @cheese.farm.name, @cheese.farm %>
-</p>
+  <p><%= image_tag("farm.png") %></P>
+  <p><strong><%= "Farm Name:" %></strong>
+    <%= link_to @cheese.farm.name, @cheese.farm %></P>
+
   <P>
     <strong>Family:</strong>
     <% if @cheese.family = "Blue" %>
-      <%= image_tag("blue.svg") %>
+      <%= image_tag("blue.png") %>
       <%= "Blue" %>
    <% elsif @cheese.family = "Fresh" %>
-      <%= image_tag("fresh.svg") %>
+      <%= image_tag("fresh.png") %>
       <%= "Fresh" %>
     <% elsif @cheese.family = "Washed Rind" %>
-      <%= image_tag("washed-rind.svg") %>
+      <%= image_tag("washed-rind.png") %>
       <%= "Washed Rind" %>
     <% elsif @cheese.family = "Firm" %>
-      <%= image_tag("firm.svg") %>
+      <%= image_tag("firm.png") %>
       <%= "Firm" %>
     <% elsif @cheese.family = "Semi Soft" %>
-      <%= image_tag("semi-soft.svg") %>
+      <%= image_tag("semi-soft.png") %>
       <%= "Semi Soft" %>
     <% elsif @cheese.family = "Hard" %>
-      <%= image_tag("hard.svg") %>
+      <%= image_tag("hard.png") %>
       <%= "Fresh" %>
     <% elsif @cheese.family = "Soft Ripened" %>
-      <%= image_tag("soft-ripend.svg") %>
+      <%= image_tag("soft-ripend.png") %>
       <%= "Soft Ripened" %>
     <% else %>
-      <%= image_tag("cheese-wheel.svg") %>
+      <%= image_tag("cheese-wheel.png") %>
       <%= "Well this seems to be a new cheese!" %>
     <% end %>
   </p>
@@ -70,4 +69,28 @@
 
     <p><%= link_to review.commentary, review %></p>
   <% end %>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Review This Cheese
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%= current_user.first_name %>s thoughts on <%= @cheese.name %></h4>
+      </div>
+      <div class="modal-body">
+        <%= render '/reviews/form' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>

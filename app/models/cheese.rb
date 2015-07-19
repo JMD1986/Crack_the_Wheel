@@ -17,12 +17,8 @@ class Cheese < ActiveRecord::Base
     end
   end
 
-  def farm_list
-  farm_options = Farm.all
-    @farm_names = []
-    farm_options.each do |farm|
-      @farm_names.push(farm.name, farm.id)
-    end
+  def similar_cheese
+    Cheese.where()
   end
 
 end
