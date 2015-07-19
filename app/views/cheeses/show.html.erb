@@ -1,13 +1,16 @@
 <div class="container">
-  <div style="background-image: url(<%= image_tag @cheese.image.url(:large)%>); background-repeat: no-repeat; background-size: cover; background-position: center center; height: 350px; z-index: -1; position: absolute; top: 0; width: 100%;">
-    <h2 class="Cheese_name"><%= @cheese.name %> </h2>
+  <div class ="row", "cheese-show-page-top">
+    <div class="title_text">
+    <%= @cheese.name %>
+  </div>
+      <%= image_tag @cheese.image.url(:large) %>
   </div>
 
   <p><%= image_tag("farm.png") %></P>
   <p><strong><%= "Farm Name:" %></strong>
     <%= link_to @cheese.farm.name, @cheese.farm %></P>
 
-  <P>
+  <P><div class="body_text">
     <strong>Family:</strong>
     <% if @cheese.family = "Blue" %>
       <%= image_tag("blue.png") %>
@@ -34,6 +37,7 @@
       <%= image_tag("cheese-wheel.png") %>
       <%= "Well this seems to be a new cheese!" %>
     <% end %>
+  </div>
   </p>
    <p>
     <strong>Age:</strong>
@@ -70,6 +74,36 @@
     <p><%= link_to review.commentary, review %></p>
   <% end %>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">

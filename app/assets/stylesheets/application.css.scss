@@ -26,6 +26,36 @@ padding: 0;
   font-size:0.9em;
 }
 
+
+body {
+  font-family: Georgia;
+  line-height: 1.4;
+  font-weight: normal;
+  font-stretch: normal;
+  font-variant: small-caps;
+  font-size: 16px;
+}
+
+.title_text {
+  font-family: Adelle;
+  bold-weight: bold;
+  font-size: 44px;
+  color: #105B63;
+}
+.subtitle_text {
+  font-family: Adelle;
+  font-weight: Regular;
+  font-size: 36px;
+  color: #DB9E36;
+
+}
+.body_text {
+  font-family: Adelle;
+  font-weight: light;
+  font-size: 16px;
+  color: #333333;
+}
+
 header  {
     padding-right: 15px;
     padding-left: 15px;
