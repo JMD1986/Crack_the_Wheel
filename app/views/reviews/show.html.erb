@@ -1,11 +1,21 @@
+<div class="title_text"><%= @review.user.first_name %>'s thoughts on
+  <div class="subtitle_text"><%#= @review.cheese.name %>
+  </div>
+</div>
 <%= image_tag @review.image.url(:large) %>
-<p>
-  <strong>Commentary:</strong>
-  <%= @review.commentary %>
-</p>
-<p>
-  <strong>Rating:</strong>
+ <p>
   <% (@review.wheel).times do %>
     <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
   <% end %>
+</p>
+
+<p>
+ <div class="subtitle_text">
+  <%= @review.title %>
+</div>
+</p>
+<p>
+  <%= @review.commentary %>
+</p>
+<p>
 </p>

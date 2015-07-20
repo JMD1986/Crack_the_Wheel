@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-styles = ['Fresh', 'Soft Ripened', 'Washed Rind', 'Firm', 'Semi Soft', 'Hard', 'Blue']
+# styles = ['Fresh', 'Soft Ripened', 'Washed Rind', 'Firm', 'Semi Soft', 'Hard', 'Blue']
 
-farms = ['Cypress Grove', 'Hoboldt County Creamery', 'South Austin Chevres']
+# farms = ['Cypress Grove', 'Hoboldt County Creamery', 'South Austin Chevres']
 
-farms = Farm.create([{name: farms.sample}, {location: }])
+# farms = Farm.create([{name: farms.sample}, {location: }])
