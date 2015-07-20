@@ -1,36 +1,38 @@
-<div class="container">
-  <div class ="row", "cheese-show-page-top">
-    <div style="background-image: url(<%= @cheese.image.url(:large) %>); background-repeat: no-repeat; background-size: cover; background-position: center center; height: 350px; z-index: -1; position: absolute; top: 0; width: 100%;">
 
+  <div class="row cheese_show_page_background">
+    <div class="cheese_show_page_background">
+      <div class="col-md-12">
+        <div class="cheese_show_page_background">
+          <div style="background-image: url(<%= @cheese.image.url(:large) %>); background-repeat: no-repeat; background-size: cover; background-position: center center; height: 350px; z-index: -1; position: absolute; top: 0px; left:0px; width: 100%;">
+          <div class="subtitle_text"><%= link_to @cheese.farm.name, @cheese.farm %></div>
+          <div class="title_text"><%= @cheese.name %></div>
+        </div>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row cheese_show_page_rating">
+        <strong>Average Rating</strong>
+        <% @cheese.average_rating.times do %>
+        <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
-<div class="subtitle_text"><%= link_to @cheese.farm.name, @cheese.farm %></div>
-<div class="title_text"><%= @cheese.name %></div>
-
-<div class="container">
-  <div class="cheese_show_page_beneath_header">
-     <p><%= display_cheese_type_icon %>
+  <div class="row cheese_show_page_info">
+    <div class="col-md-3 col-md-offset-1">
+      <%= display_cheese_type_icon %>
       <%= @cheese.family %>
-    </p>
-    <p>
-      <strong>Average Rating</strong>
-      <% @cheese.average_rating.times do %>
-      <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
-      <% end %>
-    </p>
-
-     <p>
+    </div>
+    <div class="col-md-3">
       <strong>Age:</strong>
       <%= @cheese.age %>
-    </p>
-     <p>
+    </div>
+    <div class="col-me-3">
       <strong>Milk:</strong>
       <%= @cheese.milk %>
-    </p>
-
-  <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">
-    Review This Cheese
-  </button>
+    </div>
+  </div>
 
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -46,18 +48,28 @@
     </div>
   </div>
 
-  <div class="all_reviews">
-    <div class="subtitle_text">Reviews</div>
-      <% @reviews.each do |review| %>
-      <p><%= image_tag review.image.url(:thumb) %></p>
-      <%= link_to review.user.first_name, review.user %>
-      <% (review.wheel).times do %>
-        <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
-      <% end %>
+  <div class="row cheese_show_page_reviews">
+    <div class="col-md-12">
+      <div class="all_reviews">
+        <div class="subtitle_text">Reviews</div>
+          <div class=""
+          <% @reviews.each do |review| %>
+          <p><%= image_tag review.image.url(:thumb) %></p>
+          <%= link_to review.user.first_name, review.user %>
+          <% (review.wheel).times do %>
+            <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
+          <% end %>
 
-      <p><%= link_to review.title, review %></p>
-    <% end %>
+          <p><%= link_to review.title, review %></p>
+        <% end %>
+      </div>
+    </div>
   </div>
 
-
-</div>
+  <div class="row cheese_show_page_button_area">
+    <div class="col-md-12">
+      <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">
+        Review This Cheese
+      </button>
+    </div>
+  </div>
