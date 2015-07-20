@@ -1,14 +1,23 @@
 <div class="user_show_page">
   <div class="row">
-    <%= image_tag("assets/images/ctw_wheel.png") %>
+   <div class="col-md-4 col-md-offset-4"> <%= image_tag("ctw-wheel.png") %> </div>
     <div class="row">
-      <div class="col-md-6 title_text">
-          <%= @user.first_name%> <%= @user.last_name %>
+      <div class="col-md-4 col-md-offset-4 title_text">
+        <%= @user.first_name%> <%= @user.last_name %> </div>
       </div>
-      <div class="col-md-6">
-
-        <div class="subtitle_text">Cheeses this user has reviewed</div>
+      <!-- badges go here eventually!!! -->
+        <div class="subtitle_text col-md-offset-3"><strong><%= @reviews.count %> </strong> Cheeses this user has reviewed</div>
             <div class="col-md-12">
+              <div class="row user_show_page_table_header">
+                <div class="col-md-3">Name of Cheese
+                </div>
+                <div class="col-md-3">Cheese Family
+                </div>
+                <div class="col-md-3">Number of wheels
+                </div>
+                <div class="col-md-3">Farm
+                </div>
+              </div>
               <% @reviews.each do |review| %>
               <div class="row">
                 <div class="col-md-3"><%= link_to review.cheese.name, review %>
@@ -23,7 +32,6 @@
             <% end %>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div>
