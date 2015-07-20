@@ -1,9 +1,27 @@
-<div class="container">
+<div class="user_show_page">
+  <div class="row">
+    <div class="col-md-6 title_text">
+        <%= @user.first_name%> <%= @user.last_name %>
+    </div>
+    <div class="col-md-6">
 
-
-  <p>
-    <div class="title_text">
-    <%= @user.first_name%> <%= @user.last_name %>
+      <div class="subtitle_text">Cheeses this user has reviewed</div>
+          <div class="col-md-12">
+            <% @reviews.each do |review| %>
+            <div class="row">
+              <div class="col-md-3"><%= link_to review.cheese.name, review %>
+              </div>
+              <div class="col-md-3"><%= review.cheese.family %>
+              </div>
+              <div class="col-md-3"><%= review.cheese.average_rating %> stars
+              </div>
+              <div class="col-md-3"><%= link_to review.cheese.farm.name, review.cheese.farm %>
+              </div>
+            </div>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  </p>
 </div>

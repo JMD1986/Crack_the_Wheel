@@ -48,20 +48,28 @@
     </div>
   </div>
 
+
   <div class="row cheese_show_page_reviews">
     <div class="col-md-12">
       <div class="all_reviews">
         <div class="subtitle_text">Reviews</div>
-          <div class=""
-          <% @reviews.each do |review| %>
-          <p><%= image_tag review.image.url(:thumb) %></p>
-          <%= link_to review.user.first_name, review.user %>
-          <% (review.wheel).times do %>
-            <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
+          <div class="row">
+            <% if @reviews.exists? %>
+              <% @reviews.each do |review| %>
+              <div class="col-md-6 cheese_show_page_review_blocks" >
+                  <div class="col-md-3"><%= image_tag review.image.url(:thumb) %>
+                  </div>
+                  <div class="col-md-9 cheese_show_page_review_title"><%= link_to review.title, review %>
+                  </div>
+                  <% (review.wheel).times do %>
+                    <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
+                <% end %>
+              </div>
+            <% end %>
+            <% else %>
+              <%= no reviews available %>
           <% end %>
-
-          <p><%= link_to review.title, review %></p>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>

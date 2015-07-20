@@ -1,17 +1,23 @@
-<div class="container">
-  <div class="cheese_row">
-    <% @cheeses.each do |cheese| %>
-      <div class="col-md-4 cheese_index_blocks">
-        <div class="image_container">
-          <%= image_tag cheese.image.url(:medium), class: "image_collection" %>
-        </div>
-          <% cheese.average_rating.times do %>
-          <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
-          <% end %>
-        <p><%= link_to cheese.farm.name, cheese.farm %></p>
-        <p><%#= cheese.icon %>
-          <%= link_to cheese.name, cheese %></p>
+<div class="cheese_index_page">
+  <div class="title_text cheese_index_title_text">Current Highest Rated Cheeses
+  </div>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="row cheese_row">
+        <% @cheeses.each do |cheese| %>
+          <div class="col-md-4 cheese_index_blocks">
+            <div class="image_container">
+              <%= image_tag cheese.image.url(:medium), class: "image_collection" %>
+            </div>
+              <% cheese.average_rating.times do %>
+              <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
+              <% end %>
+            <p><%= link_to cheese.farm.name, cheese.farm %></p>
+            <p><%#= cheese.icon %>
+              <%= link_to cheese.name, cheese %></p>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>

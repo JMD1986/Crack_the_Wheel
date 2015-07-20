@@ -3,6 +3,8 @@
 @import 'farms';
 @import 'cheeses';
 @import 'reviews';
+@import 'users';
+@import url(http://fonts.googleapis.com/css?family=Antic+Slab|Antic+Didone|Antic|Slabo+27px|Quantico:400,400italic,700,700italic);
 
 $primary: #DE9D4A;
 
@@ -29,19 +31,19 @@ padding: 0;
 
 
 .title_text {
-  font-family: Adelle;
+  font-family: 'Antic Slab', serif;
   bold-weight: bold;
   font-size: 44px;
   color: #105B63;
 }
 .subtitle_text {
-  font-family: Adelle;
+  font-family: 'Antic Slab', serif;
   font-size: 36px;
   color: #DB9E36;
 
 }
 .body_text {
-  font-family: Adelle;
+  font-family: 'Antic', sans-serif;
   font-weight: light;
   font-size: 16px;
   color: #333333;
@@ -84,7 +86,7 @@ footer {
 
 body {
   background-color: #FFFAD9;
-  font-family: Adelle;
+  font-family: 'Antic', sans-serif;
   font-weight: light;
   font-size: 16px;
   color: #333333;
