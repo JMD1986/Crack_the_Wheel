@@ -10,6 +10,7 @@ class Cheese < ActiveRecord::Base
                     :path => "/:class/:attachment/:id_partition/:style/:filename"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
+  #this needs to be reworked so that the user needs to know it needs a review
   def average_rating
     if reviews.count > 0
       reviews.pluck(:wheel).sum / reviews.count
@@ -18,6 +19,7 @@ class Cheese < ActiveRecord::Base
     end
   end
 
+  #this is a helper mether right now but I would like to make it a virtual column as well
   def icon
     if @cheese.family = "Blue"
       image_tag("blue.png", size:"75")
@@ -38,8 +40,5 @@ class Cheese < ActiveRecord::Base
     end
   end
 
-  def similar_cheese
-    Cheese.where()
-  end
 
 end
