@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
   def show
     @reviews = Review.where(cheese_id: params[:id])
     @review = Review.find(params[:id])
+    #@cheese = @review.where
   end
 
   def new

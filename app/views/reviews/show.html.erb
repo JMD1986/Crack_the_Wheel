@@ -1,21 +1,27 @@
-<div class="title_text"><%= @review.user.first_name %>'s thoughts on
-  <div class="subtitle_text"><%#= @review.cheese.name %>
+<div class="container review_show_page">
+  <div class="review_show_page">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-2">
+      <div class="title_text"><%= @review.user.first_name %>'s thoughts on
+        <div class="subtitle_text"><%#= @review.cheese.name %>
+        </div>
+      </div>
+      <%= image_tag @review.image.url(:medium) %>
+    </div>
+  <div class="col-md-4 col-md-offset-1">
+    <div class="subtitle_text">
+      <%= @review.title %>
+    </div>
+    <div class="review-show-page-ratings">
+      <% (@review.wheel).times do %>
+        <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice_show_page") %>
+      <% end %>
+    </div>
+    <div class="review_show_page_commentary">
+      <%= @review.commentary %>
+    </div>
   </div>
 </div>
-<%= image_tag @review.image.url(:large) %>
- <p>
-  <% (@review.wheel).times do %>
-    <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
-  <% end %>
-</p>
-
-<p>
- <div class="subtitle_text">
-  <%= @review.title %>
 </div>
-</p>
-<p>
-  <%= @review.commentary %>
-</p>
-<p>
-</p>
+
+

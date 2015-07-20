@@ -2,6 +2,7 @@
 @import 'bootstrap';
 @import 'farms';
 @import 'cheeses';
+@import 'reviews';
 
 $primary: #DE9D4A;
 
@@ -90,12 +91,16 @@ body {
 }
 .container {
   padding: 0px;
+  margin: 0px;
 }
 .ratings_slice {
   width: 7%;
   height: auto;
 }
-
+.ratings_slice_show_page {
+  width: 15%;
+  height: auto;
+}
 
 .main_logo {
   width: 75%;
