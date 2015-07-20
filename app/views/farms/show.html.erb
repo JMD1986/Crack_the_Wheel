@@ -12,12 +12,11 @@
   <%= @farm.location %>
 </p>
 <p>
-  <strong>Cheeses:</strong>
+  <strong> <%= @cheese.count %> Cheeses:</strong>
   <ul>
     <% @cheese.each do |cheese| %>
     <li><%= link_to cheese.name, cheese %> | <% cheese.average_rating.times do %>
-          <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
-          <% end %> | <%= cheese.family %>
+          <%=image_tag("ctw-cheese-slice.png", size:"15px", class: "ratings_slice") %> <% end %>
   <% end %>
 </ul>
 </p>

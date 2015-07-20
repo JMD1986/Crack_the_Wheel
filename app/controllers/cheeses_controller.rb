@@ -14,6 +14,11 @@ class CheesesController < ApplicationController
     @wheel_scale = [1, 2, 3, 4, 5]
   end
 
+  # this will eventually be a page that just show one of the seven families of cheese
+  # def show_family
+  #   @cheeses = Cheese.where(cheese.family: params[:id])
+  # end
+
   def new
     authenticate_user!
     @cheese = Cheese.new

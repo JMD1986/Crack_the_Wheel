@@ -4,6 +4,7 @@
 
   </div>
 </div>
+<div class="subtitle_text"><%= link_to @cheese.farm.name, @cheese.farm %></div>
 <div class="title_text"><%= @cheese.name %></div>
 <div class="container">
   <div class="cheese_show_page_beneath_header">
@@ -13,10 +14,6 @@
       <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
       <% end %>
     </p>
-    <p><%= image_tag("farm.png", size:"20") %></P>
-    <p><strong><%= "Farm Name:" %></strong>
-      <%= link_to @cheese.farm.name, @cheese.farm %></P>
-
     <p><%= display_cheese_type_icon %>
       <%= @cheese.family %>
     </p>
