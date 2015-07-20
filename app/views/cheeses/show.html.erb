@@ -1,87 +1,64 @@
 <div class="container">
   <div class ="row", "cheese-show-page-top">
-    <div class="title_text">
-    <%= @cheese.name %>
+    <div style="background-image: url(<%= @cheese.image.url(:large) %>); background-repeat: no-repeat; background-size: cover; background-position: center center; height: 350px; z-index: -1; position: absolute; top: 0; width: 100%;">
+
   </div>
-      <%= image_tag @cheese.image.url(:large) %>
+</div>
+<div class="title_text"><%= @cheese.name %></div>
+<div class="container">
+  <div class="cheese_show_page_beneath_header">
+    <p>
+      <strong>Average Rating</strong>
+      <% @cheese.average_rating.times do %>
+      <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
+      <% end %>
+    </p>
+    <p><%= image_tag("farm.png", size:"20") %></P>
+    <p><strong><%= "Farm Name:" %></strong>
+      <%= link_to @cheese.farm.name, @cheese.farm %></P>
+
+    <p><%= display_cheese_type_icon %>
+      <%= @cheese.family %>
+    </p>
+     <p>
+      <strong>Age:</strong>
+      <%= @cheese.age %>
+    </p>
+     <p>
+      <strong>Milk:</strong>
+      <%= @cheese.milk %>
+    </p>
+
+  <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">
+    Review This Cheese
+  </button>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"><%= current_user.first_name %>s thoughts on <%= @cheese.name %></h4>
+        </div>
+        <div class="modal-body">
+          <%= render '/reviews/form' %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <p><%= image_tag("farm.png", size:"20") %></P>
-  <p><strong><%= "Farm Name:" %></strong>
-    <%= link_to @cheese.farm.name, @cheese.farm %></P>
-
-  <P><div class="body_text">
-    <strong>Family:</strong>
-    <% if @cheese.family = "Blue" %>
-      <%= image_tag("blue.png", size:"75") %>
-      <%= "Blue" %>
-   <% elsif @cheese.family = "Fresh" %>
-      <%= image_tag("fresh.png", size:"75") %>
-      <%= "Fresh" %>
-    <% elsif @cheese.family = "Washed Rind" %>
-      <%= image_tag("washed-rind.png", size:"75") %>
-      <%= "Washed Rind" %>
-    <% elsif @cheese.family = "Firm" %>
-      <%= image_tag("firm.png", size:"75") %>
-      <%= "Firm" %>
-    <% elsif @cheese.family = "Semi Soft" %>
-      <%= image_tag("semi-soft.png", size:"75") %>
-      <%= "Semi Soft" %>
-    <% elsif @cheese.family = "Hard" %>
-      <%= image_tag("hard.png", size:"75") %>
-      <%= "Fresh" %>
-    <% elsif @cheese.family = "Soft Ripened" %>
-      <%= image_tag("soft-ripend.png", size:"75") %>
-      <%= "Soft Ripened" %>
-    <% else %>
-      <%= image_tag("cheese-wheel.png") %>
-      <%= "Well this seems to be a new cheese!" %>
-    <% end %>
-  </div>
-  </p>
-   <p>
-    <strong>Age:</strong>
-    <%= @cheese.age %>
-  </p>
-   <p>
-    <strong>Milk:</strong>
-    <%= @cheese.milk %>
-  </p>
-  <p>
-    <strong>Origin:</strong>
-    <%= @cheese.origin %>
-  </p>
-  <p>
-    <strong>Average Rating</strong>
-    <% @cheese.average_rating.times do %>
-    <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
-    <% end %>
-  </p>
-
-  <% @reviews.each do |review| %>
-    <p><%= image_tag review.image.url(:thumb) %></p>
-    <%= review.user.first_name %>
+  <div class="all_reviews">
+    <div class="subtitle_text">Reviews</div>
+      <% @reviews.each do |review| %>
+      <p><%= image_tag review.image.url(:thumb) %></p>
+      <%= review.user.first_name %>
       <% (review.wheel).times do %>
         <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
       <% end %>
 
-    <p><%= link_to review.commentary, review %></p>
-  <% end %>
-
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Review This Cheese
-</button>
-
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><%= current_user.first_name %>s thoughts on <%= @cheese.name %></h4>
-      </div>
-      <div class="modal-body">
-        <%= render '/reviews/form' %>
-      </div>
-    </div>
+      <p><%= link_to review.commentary, review %></p>
+    <% end %>
   </div>
+
+
 </div>

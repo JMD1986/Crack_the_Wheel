@@ -1,8 +1,9 @@
 class CheesesController < ApplicationController
+  helper CheesesHelper
   before_action :set_cheese, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cheeses = Cheese.all
+    @cheeses = Cheese.all.sort_by { |cheese| cheese.average_rating }.reverse
     @farms = Farm.all
   end
 

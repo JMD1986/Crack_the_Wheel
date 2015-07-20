@@ -18,6 +18,8 @@ class Cheese < ActiveRecord::Base
     end
   end
 
+
+
   def similar_cheese
     Cheese.where()
   end
