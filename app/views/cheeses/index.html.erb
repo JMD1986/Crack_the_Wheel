@@ -9,7 +9,8 @@
           <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
           <% end %>
         <p><%= link_to cheese.farm.name, cheese.farm %></p>
-        <p><%= link_to cheese.name, cheese %></p>
+        <p><%#= cheese.icon %>
+          <%= link_to cheese.name, cheese %></p>
       </div>
     <% end %>
   </div>

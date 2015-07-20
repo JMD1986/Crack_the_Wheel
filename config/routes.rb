@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :farms
   resources :cheeses
   resources :reviews
+  resources :users
   devise_for :users
 
 

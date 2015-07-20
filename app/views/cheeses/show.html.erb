@@ -9,15 +9,16 @@
 
 <div class="container">
   <div class="cheese_show_page_beneath_header">
+     <p><%= display_cheese_type_icon %>
+      <%= @cheese.family %>
+    </p>
     <p>
       <strong>Average Rating</strong>
       <% @cheese.average_rating.times do %>
       <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
       <% end %>
     </p>
-    <p><%= display_cheese_type_icon %>
-      <%= @cheese.family %>
-    </p>
+
      <p>
       <strong>Age:</strong>
       <%= @cheese.age %>
@@ -49,7 +50,7 @@
     <div class="subtitle_text">Reviews</div>
       <% @reviews.each do |review| %>
       <p><%= image_tag review.image.url(:thumb) %></p>
-      <%= review.user.first_name %>
+      <%= link_to review.user.first_name, review.user %>
       <% (review.wheel).times do %>
         <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
       <% end %>

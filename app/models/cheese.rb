@@ -2,7 +2,8 @@ class Cheese < ActiveRecord::Base
   has_many :reviews
   has_many :wheels
   belongs_to :farm
-  has_attached_file :image, styles: { large: "600x600>",
+  has_attached_file :image, styles: { huge: "1200x1200",
+                                      large: "600x600>",
                                       medium: "300x300",
                                       thumb: "100x100#"},
                     :url => ":s3_domain_url",
@@ -22,21 +23,21 @@ class Cheese < ActiveRecord::Base
   #this is a helper mether right now but I would like to make it a virtual column as well
   def icon
     if @cheese.family = "Blue"
-      image_tag("blue.png", size:"75")
+      image_tag("blue.png", size:"15")
     elsif @cheese.family = "Fresh"
-      image_tag("fresh.png", size:"75")
+      image_tag("fresh.png", size:"15")
     elsif @cheese.family = "Washed Rind"
-      image_tag("washed-rind.png", size:"75")
+      image_tag("washed-rind.png", size:"15")
     elsif @cheese.family = "Firm"
-      image_tag("firm.png", size:"75")
+      image_tag("firm.png", size:"15")
     elsif @cheese.family = "Semi Soft"
-      image_tag("semi-soft.png", size:"75")
+      image_tag("semi-soft.png", size:"15")
     elsif @cheese.family = "Hard"
-      image_tag("hard.png", size:"75")
+      image_tag("hard.png", size:"15")
     elsif @cheese.family = "Soft Ripened"
-      image_tag("soft-ripend.png", size:"75")
+      image_tag("soft-ripend.png", size:"15")
     else
-      image_tag("cheese-wheel.png", size:"75")
+      image_tag("cheese-wheel.png", size:"15")
     end
   end
 
