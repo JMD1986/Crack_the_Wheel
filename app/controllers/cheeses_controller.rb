@@ -27,7 +27,7 @@ class CheesesController < ApplicationController
     farm_options.each do |farm|
     @farm_names << [farm.name, farm.id]
     end
-
+    @milk_options = ['Cow', 'Sheep', 'Goat']
     @family_options = ['Fresh', 'Soft Ripened', 'Washed Rind', 'Firm', 'Semi Soft', 'Hard', 'Blue']
   end
 

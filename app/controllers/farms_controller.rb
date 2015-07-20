@@ -12,6 +12,7 @@ class FarmsController < ApplicationController
     @cheese = Cheese.where(farm_id: params[:id])
   end
 
+
   # GET /farms/new
   def new
     authenticate_user!

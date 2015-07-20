@@ -1,11 +1,11 @@
 <%= image_tag @review.image.url(:large) %>
 <p>
   <strong>Commentary:</strong>
-  <%= @reviews.commentary %>
+  <%= @review.commentary %>
 </p>
 <p>
   <strong>Rating:</strong>
-  <% (@reviews.wheel).times do %>
+  <% (@review.wheel).times do %>
     <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
   <% end %>
 </p>

@@ -8,8 +8,8 @@ class ReviewsController < ApplicationController
 
 
   def show
-    @cheese = Cheese.find(params[:id])
-    @reviews = Review.find(params[:id])
+    @reviews = Review.where(cheese_id: params[:id])
+    @review = Review.find(params[:id])
   end
 
   def new
