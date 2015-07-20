@@ -1,4 +1,5 @@
 class FarmsController < ApplicationController
+  helper FarmsHelper
   before_action :set_farm, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -8,7 +9,7 @@ class FarmsController < ApplicationController
 
   def show
     #talk to someone about what happens if this doesnt exist when the farm is created!
-    @cheese = Cheese.where(cheese_id: params[:id])
+    @cheese = Cheese.where(farm_id: params[:id])
   end
 
   # GET /farms/new

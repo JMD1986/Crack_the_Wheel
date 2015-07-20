@@ -1,6 +1,7 @@
-<div class="farm_show_page">
+<div class="container">
+<p><%= image_tag("farm.png") %></P>
 <p>
-  <h1><%= @farm.name %></h1>
+  <div class="title_text"><%= @farm.name %></div>
 </p>
 <p>
   <strong>Bio:</strong>
@@ -10,5 +11,14 @@
   <strong>Location:</strong>
   <%= @farm.location %>
 </p>
-
+<p>
+  <strong>Cheeses:</strong>
+  <ul>
+    <% @cheese.each do |cheese| %>
+    <li><%= link_to cheese.name, cheese %> | <% cheese.average_rating.times do %>
+          <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
+          <% end %> | <%= cheese.family %>
+  <% end %>
+</ul>
+</p>
 </div>
