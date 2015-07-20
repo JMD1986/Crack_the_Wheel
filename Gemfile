@@ -18,6 +18,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
 gem 'figaro'
 gem 'elasticsearch', '~> 1.0.12'
+gem 'will_paginate-bootstrap', '~> 1.0.1'
+gem 'will_paginate'
 
 group :development, :test do
 
