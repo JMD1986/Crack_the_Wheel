@@ -10,6 +10,9 @@
 <header class='main'>
   <div class='row'>
     <div class='col-sm-3'><h1><%= link_to image_tag("ctw-logo.png", class: "main_logo"), root_path %></h1></div>
+
+    <div class='col-sm-3'> <a href="/cheeses/new">Add A Cheese</a></div>
+    <div class='col-sm-3'> <a href="/farms/new">Add A Farm</a></div>
     <div class='col-sm-3'>
       <% if user_signed_in? %>
         <li>Happy Cheesing <a href="/users/<%= current_user.id %>"><%= current_user.first_name %>!</a></li>
@@ -19,8 +22,6 @@
         <li><a href="/users/sign_up">Sign Up</a></li>
       <% end %>
     </div>
-    <div class='col-sm-3'> <a href="/cheeses/new">Add A Cheese</a></div>
-    <div class='col-sm-3'> <a href="/farms/new">Add A Farm</a></div>
   </div>
 </header>
 <body>

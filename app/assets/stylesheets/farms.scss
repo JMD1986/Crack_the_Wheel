@@ -3,11 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .farm_show_page {
-  background: url(thunder-oak-wheels-of-gouda.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  padding-top: 4em;
 }
 
 .new_farm_page {
@@ -21,7 +17,16 @@
 }
 
 .form-box {
-  background-color: #C14737;
+  background-color: #FEF9D8;
   min-width: 2em;
   border-radius: 3px;
+  .title_text {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+.new_farm_page_form {
+  padding-bottom: 3em;
+
 }

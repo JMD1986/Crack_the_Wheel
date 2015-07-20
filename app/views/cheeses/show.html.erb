@@ -61,14 +61,17 @@
                   </div>
                   <div class="col-md-9 cheese_show_page_review_title"><%= link_to review.title, review %>
                   </div>
+                  <p><%= truncate(review.commentary, length: 100) %></p>
+
+                  <h5>Rating</h5>
                   <% (review.wheel).times do %>
                     <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
                 <% end %>
               </div>
             <% end %>
             <% else %>
-              <%= no reviews available %>
-          <% end %>
+              no reviews available
+            <% end %>
         </div>
       </div>
     </div>

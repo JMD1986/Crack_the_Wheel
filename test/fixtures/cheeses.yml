@@ -3,11 +3,9 @@
 one:
   name: MyString
   family: MyString
-  style: MyString
   origin: MyString
 
 two:
   name: MyString
   family: MyString
-  style: MyString
   origin: MyString

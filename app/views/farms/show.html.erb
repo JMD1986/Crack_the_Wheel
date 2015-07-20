@@ -1,23 +1,32 @@
-<div class="container">
-<p><%= image_tag("farm.png") %></P>
-<p>
-  <div class="title_text"><%= @farm.name %></div>
-</p>
-<p>
-  <strong>Bio:</strong>
-  <%= @farm.bio %>
-</p>
-<p>
-  <strong>Location:</strong>
-  <%= @farm.location %>
-</p>
-<p>
-  <strong> <%= @cheese.count %> Cheeses:</strong>
-  <ul>
-    <% @cheese.each do |cheese| %>
-    <li><%= link_to cheese.name, cheese %> | <% cheese.average_rating.times do %>
-          <%=image_tag("ctw-cheese-slice.png", size:"15px", class: "ratings_slice") %> <% end %>
-  <% end %>
-</ul>
-</p>
+<div class="container farm_show_page">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="title_text"><%= @farm.name %></div>
+      <%= image_tag("farm.png") %>
+      <p>
+        <strong>Location:</strong>
+        <%= @farm.location %>
+      </p>
+        <strong>Bio:</strong>
+        <%= @farm.bio %>
+      </p>
+    </div>
+    <div class="col-md-6">
+      <div class="subtitle_text"> This farm has <strong><%= @cheese.count %></strong> Cheeses in our system:</div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+            <% @cheese.each do |cheese| %>
+            <div class="col-md-6"><%= link_to cheese.name, cheese %>
+            </div>
+            <div class="col-md-6">
+            <% cheese.average_rating.times do %>
+              <%=image_tag("ctw-cheese-slice.png", size:"15px", class: "ratings_slice") %>
+              <% end %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>

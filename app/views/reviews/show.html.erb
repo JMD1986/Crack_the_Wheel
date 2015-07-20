@@ -2,8 +2,8 @@
   <div class="review_show_page">
     <div class="row">
       <div class="col-md-4 col-md-offset-2">
-        <div class="title_text">Cheese Name
-          <div class="subtitle_text"><%#= @review.cheese.name %>
+        <div class="title_text"><%= @review.cheese.name %>
+          <div class="subtitle_text"><%# @review.cheese.name %>
           </div>
         </div>
         <%= image_tag @review.image.url(:medium) %>

@@ -33,6 +33,7 @@
 
   .cheese_index_blocks {
     background-color: #005B62;
+    padding-left: 2em;
     margin-top: 2em;
     margin-left: 2em;
     margin-right: 2em;
@@ -79,6 +80,18 @@
   margin: 0px;
   width: 100%;
   padding-top: 1em;
+}
+
+.cheese_index_page_farm_name {
+  font-style: italic;
+  font-size: 14px;
+  a {
+    color: #93A8B8;
+  }
+}
+
+.cheese_index_page_cheese_name {
+  font-size: 18px;
 }
 
 .cheese_show_page_info{

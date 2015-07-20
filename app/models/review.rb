@@ -6,7 +6,7 @@ class Review < ActiveRecord::Base
                                       medium: "300x300",
                                       thumb: "100x100#"},
                     :url => ":s3_domain_url",
-                    :default_url => "../assets/images/cheese-wheel.png",
+                    :default_url => "cheese-wheel.png",
                     :path => "/:class/:attachment/:id_partition/:style/:filename"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/

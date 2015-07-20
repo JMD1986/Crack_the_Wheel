@@ -13,6 +13,9 @@ margin: 0;
 padding: 0;
 }
 
+a {
+text-decoration: none;
+}
 .alert {
   padding: 0px;
   border: 0px;
@@ -96,7 +99,7 @@ body {
 //   margin: 0px;
 // }
 .ratings_slice {
-  width: 7%;
+  width: 8%;
   height: auto;
 }
 .ratings_slice_show_page {
