@@ -1,8 +1,10 @@
 <!-- Top part. kinda hacked together. plz be careful bbdoll -->
+  <p id="notice"><%= notice %></p>
+  <p id="alert"><%= alert %></p>
       <div class="container show_page_banner">
         <div style="background-image: url(<%= @cheese.image.url(:large) %>); background-repeat: no-repeat; background-size: cover; background-position: center center; height: 350px; z-index: -1; position: absolute; top: 0px; left:0px; width: 100%;">
           <div class="title_text_padding"><h3 class="title_text"><%= @cheese.name %></h3></div>
-          <div class="subtitle_text"><p class="align"><%= @cheese.farm.name %></p></div>
+          <div class="subtitle_text"><p class="align add_border"><%= @cheese.farm.name %></p></div>
         </div>
       </div>
 
