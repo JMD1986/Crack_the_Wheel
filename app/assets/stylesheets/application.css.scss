@@ -5,6 +5,13 @@
 @import 'reviews';
 @import 'users';
 @import url(http://fonts.googleapis.com/css?family=Antic+Slab|Antic+Didone|Antic|Slabo+27px|Quantico:400,400italic,700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700);
+
+.container {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 
 $primary: #DE9D4A;
 
@@ -34,19 +41,19 @@ text-decoration: none;
 
 
 .title_text {
-  font-family: 'Antic Slab', serif;
-  bold-weight: bold;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
   font-size: 44px;
   color: #105B63;
 }
 .subtitle_text {
-  font-family: 'Antic Slab', serif;
+  font-family: 'Roboto Slab', serif;
   font-size: 36px;
   color: #DB9E36;
 
 }
 .body_text {
-  font-family: 'Antic', sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-weight: light;
   font-size: 16px;
   color: #333333;
@@ -94,10 +101,7 @@ body {
   font-size: 16px;
   color: #333333;
 }
-// .container {
-//   padding: 0px;
-//   margin: 0px;
-// }
+
 .ratings_slice {
   width: 8%;
   height: auto;

@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// new cheese page
 .new_cheese_page {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -27,6 +28,8 @@
   padding-top: 25px;
 }
 
+// cheese index page
+
 .cheese_row {
   background-color: #005B62;
   padding-top: 25px;
@@ -51,9 +54,6 @@
     }
   }
 }
-// .cheese_show_page_beneath_header{
-//   padding-top: 200px;
-// }
 
 .cheese_index_page {
   padding-top: 5em;
@@ -65,26 +65,11 @@
   padding-left: 1em;
 }
 
-
-.cheese_show_page_background {
-  height: 240px;
-  margin: 0px;
-  padding:0px;
-  top: -1em;
-}
-
-
-.cheese_show_page_rating {
-  background-color: #C14737;
-  height: 5em;
-  margin: 0px;
-  width: 100%;
-  padding-top: 1em;
-}
-
 .cheese_index_page_farm_name {
   font-style: italic;
+  font-family: "Roboto Slab";
   font-size: 14px;
+  font-weight: 300;
   a {
     color: #93A8B8;
   }
@@ -92,32 +77,40 @@
 
 .cheese_index_page_cheese_name {
   font-size: 18px;
+  font-family: "Roboto Slab";
+  font-weight: 400;
 }
 
-.cheese_show_page_info{
-  background-color: #DE9D4A;
-  height: 5em;
+// cheese show page
+
+.show_page_banner {
+  padding-bottom: 280px;
 }
 
-.cheese_show_page_button_area {
-  background-color: #FFD34E;
-  height: 5em;
+.show_page_wheels {
+  height: 60px;
 }
 
-.cheese_show_page_review_title {
-  font-size: 3em;
-  font-style: italic;
+
+
+.cheese_info {
+  font-family: 'Roboto Slab', serif;
+  font-size: 36px;
+  color: #DB9E36;
 }
 
-.user_name_quote {
-  font-style: italic;
+.title_text_padding {
+  margin-top: 100px;
+  text-align: center;
 }
 
-a.user_name_quote{
-  text-decoration: none;
+.align {
+  text-align: center;
+  margin-bottom: 200px;
 }
 
-.cheese_show_page_review_blocks {
-  padding-top: 2em;
-  padding-bottom: 2em;
-}
+// .cheese_show_info_section {
+//  background-color: #FFD266;
+//  width: 100%;
+//  margin: 0px;
+// }

@@ -12,11 +12,10 @@
               <% cheese.average_rating.times do %>
               <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
               <% end %>
-            <%#= cheese.icon %>
-              <div class="cheese_index_page_cheese_name"><%= link_to cheese.name, cheese %>
-              </div>
-              <div class="cheese_index_page_farm_name"><%= link_to cheese.farm.name, cheese.farm %>
-              </div>
+            <div class="cheese_index_page_cheese_name"><%= link_to cheese.name, cheese %>
+            </div>
+            <div class="cheese_index_page_farm_name"><%= link_to cheese.farm.name, cheese.farm %>
+            </div>
           </div>
         <% end %>
       </div>
