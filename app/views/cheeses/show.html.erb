@@ -9,7 +9,7 @@
 <!-- area with the #rare #golden #collectable cheese information -->
 
   <div class="row">
-    <div class="col-md-4 col-md-offset-1"><% @cheese.average_rating.times do %>
+    <div class="col-md-4"><% @cheese.average_rating.times do %>
             <%=image_tag("ctw-cheese-slice.png", class: "show_page_wheels") %>
           <% end %>
     </div>
@@ -40,21 +40,24 @@
   <div class="row cheese_show_page_reviews">
     <div class="col-md-12">
       <div class="all_reviews">
-        <div class="subtitle_text"><strong><%= @reviews.count %></strong> Total Reviews</div>
+        <div class="subtitle_text"><p class="cheese_show_page_review_title_header"><strong><%= @reviews.count %></strong> Total Reviews</div></p>
           <div class="row">
             <% if @reviews.exists? %>
               <% @reviews.each do |review| %>
               <div class="col-md-6 cheese_show_page_review_blocks" >
                   <div class="col-md-3"><%= image_tag review.image.url(:thumb) %>
                   </div>
-                  <div class="col-md-9 cheese_show_page_review_title"><%= link_to review.title, review %>
-                  </div>
-                  <p><%= truncate(review.commentary, length: 100) %></p>
 
-                  <h5>Rating</h5>
+                  <div class="col-md-9 cheese_show_page_review_title"><h3><%= link_to review.title, review %></h3>
+                    <p><%= truncate(review.commentary, length: 100) %></p>
+                  </div>
+
+
                   <% (review.wheel).times do %>
-                    <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
+                    <%=image_tag("ctw-cheese-slice.png", class: "cheese_show_page_ratings_slice") %>
                 <% end %>
+                <!-- <h5>Rating</h5> -->
+
               </div>
             <% end %>
             <% else %>
