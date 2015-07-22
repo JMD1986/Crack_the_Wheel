@@ -10,6 +10,7 @@
   height: 100%;
   display: block;
   background: url(img_0070.jpg);
+  background-position: center;
   background-size: 1300px 1300px;
 
   .new_cheese_page::after {
@@ -37,6 +38,7 @@
   .cheese_index_blocks {
     background-color: #005B62;
     padding-left: 2em;
+    padding-bottom: 10px;
     margin-top: 2em;
     margin-left: 2em;
     margin-right: 2em;
@@ -91,7 +93,10 @@
   height: 60px;
 }
 
-
+.cheese_show_page_button_area {
+  margin: auto 0;
+  padding-bottom: 20px;
+}
 
 .cheese_info {
   font-family: 'Roboto Slab', serif;

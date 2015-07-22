@@ -3,7 +3,7 @@ class Cheese < ActiveRecord::Base
   has_many :wheels
   belongs_to :farm
   has_attached_file :image, styles: { huge: "1200x1200",
-                                      large: "550x550>",
+                                      large: "600x600>",
                                       medium: "300x300",
                                       thumb: "100x100#"},
                     :url => ":s3_domain_url",
