@@ -22,13 +22,7 @@ class CheesesController < ApplicationController
   def new
     authenticate_user!
     @cheese = Cheese.new
-    farm_options = Farm.all
-    @farm_names = []
-    farm_options.each do |farm|
-    @farm_names << [farm.name, farm.id]
-    end
-    @milk_options = ['Cow', 'Sheep', 'Goat']
-    @family_options = ['Fresh', 'Soft Ripened', 'Washed Rind', 'Firm', 'Semi Soft', 'Hard', 'Blue']
+    set_cheese_options
   end
 
   def edit
@@ -36,12 +30,12 @@ class CheesesController < ApplicationController
 
   def create
     @cheese = Cheese.new(cheese_params)
-
     respond_to do |format|
       if @cheese.save
         format.html { redirect_to @cheese, notice: 'Cheese was successfully created.' }
         format.json { render :show, status: :created, location: @cheese }
       else
+        set_cheese_options
         format.html { render :new }
         format.json { render json: @cheese.errors, status: :unprocessable_entity }
       end
@@ -67,6 +61,16 @@ class CheesesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_cheese
       @cheese = Cheese.find(params[:id])
+    end
+
+    def set_cheese_options
+      farm_options = Farm.all
+      @farm_names = []
+      farm_options.each do |farm|
+        @farm_names << [farm.name, farm.id]
+      end
+      @milk_options = ['Cow', 'Sheep', 'Goat']
+      @family_options = ['Fresh', 'Soft Ripened', 'Washed Rind', 'Firm', 'Semi Soft', 'Hard', 'Blue']
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
