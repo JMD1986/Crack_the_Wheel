@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :cheeses
   resources :reviews
   devise_for :users
+  resources :users
 
 
 
