@@ -10,7 +10,7 @@
               <%= image_tag cheese.image.url(:medium), class: "image_collection" %>
             </div>
               <% cheese.average_rating.times do %>
-              <%=image_tag("ctw-cheese-slice.png", class: "ratings_slice") %>
+              <%=image_tag "ctw-cheese-slice.png", class: "ratings_slice" %>
               <% end %>
             <div class="cheese_index_page_cheese_name"><%= link_to cheese.name, cheese %>
             </div>
