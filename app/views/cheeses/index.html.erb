@@ -9,8 +9,12 @@
             <div class="image_container">
               <%= image_tag cheese.image.url(:medium), class: "image_collection" %>
             </div>
-            <% cheese.average_rating.times do %>
+            <% if cheese.average_rating == 0 %>
+              no reviews yet 😞
+            <% else %>
+              <% cheese.average_rating.times do %>
               <%=image_tag "ctw-cheese-slice.png", class: "ratings_slice" %>
+              <% end %>
             <% end %>
             <div class="cheese_index_page_cheese_name"><%= link_to cheese.name, cheese %>
             </div>
