@@ -12,6 +12,8 @@ class CheesesController < ApplicationController
     @reviews = Review.where(cheese_id: params[:id])
     @review = Review.new
     @wheel_scale = [1, 2, 3, 4, 5]
+    @family_options = ['Fresh', 'Soft Ripened', 'Washed Rind', 'Firm', 'Semi Soft', 'Hard', 'Blue']
+
   end
 
   def what_is
