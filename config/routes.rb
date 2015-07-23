@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :wheels
   resources :farms
+  get   '/cheeses/what_is', to: 'cheeses#what_is'
   resources :cheeses
   resources :reviews
   devise_for :users

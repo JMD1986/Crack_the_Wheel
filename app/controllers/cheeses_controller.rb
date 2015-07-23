@@ -7,16 +7,14 @@ class CheesesController < ApplicationController
     @farms = Farm.all
   end
 
-  def family_index
-    @cheeses = Cheese.all.sort_by { |cheese| cheese.average_rating }.reverse
-    @farms = Farm.all
-  end
-
   def show
     authenticate_user!
     @reviews = Review.where(cheese_id: params[:id])
     @review = Review.new
     @wheel_scale = [1, 2, 3, 4, 5]
+  end
+
+  def what_is
   end
 
   # this will eventually be a page that just show one of the seven families of cheese
