@@ -7,6 +7,11 @@ class CheesesController < ApplicationController
     @farms = Farm.all
   end
 
+  def family_index
+    @cheeses = Cheese.all.sort_by { |cheese| cheese.average_rating }.reverse
+    @farms = Farm.all
+  end
+
   def show
     authenticate_user!
     @reviews = Review.where(cheese_id: params[:id])
