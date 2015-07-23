@@ -15,6 +15,7 @@ class CheesesController < ApplicationController
   end
 
   def what_is
+    @user = current_user
   end
 
   # this will eventually be a page that just show one of the seven families of cheese
