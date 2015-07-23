@@ -1,5 +1,5 @@
-  <p id="notice"><%= notice %></p>
-  <p id="alert"><%= alert %></p>
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
 <div class="container farm_show_page">
   <div class="row">
     <div class="col-md-6">
@@ -24,8 +24,13 @@
 
             </div>
             <div class="col-md-6">
-            <% cheese.average_rating.times do %>
+              <!-- FIX THIS!!!! -->
+              <% if cheese.average_rating.times == 0 %>
+                  unrated
+                <% else %>
+              <% cheese.average_rating.times do %>
               <%=image_tag("ctw-cheese-slice.png", size:"15px", class: "ratings_slice") %>
+                <% end %>
               <% end %>
             </div>
             <% end %>
