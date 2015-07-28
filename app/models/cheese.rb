@@ -23,25 +23,10 @@ class Cheese < ActiveRecord::Base
   end
 
   #this is a helper mether right now but I would like to make it a virtual column as well
-  def icon
-    if @cheese.family = "Blue"
-      image_tag("blue.png", size:"15")
-    elsif @cheese.family = "Fresh"
-      image_tag("fresh.png", size:"15")
-    elsif @cheese.family = "Washed Rind"
-      image_tag("washed-rind.png", size:"15")
-    elsif @cheese.family = "Firm"
-      image_tag("firm.png", size:"15")
-    elsif @cheese.family = "Semi Soft"
-      image_tag("semi-soft.png", size:"15")
-    elsif @cheese.family = "Hard"
-      image_tag("hard.png", size:"15")
-    elsif @cheese.family = "Soft Ripened"
-      image_tag("soft-ripend.png", size:"15")
-    else
-      image_tag("cheese-wheel.png", size:"15")
-    end
-  end
+
+  # def sort_cheese
+  #   @cheese.reviews.count <
+  # end
 
 
 end
